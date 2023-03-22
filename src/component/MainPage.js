@@ -25,7 +25,7 @@ function MainPage() {
           <div className="underline" />
         </div>
         <Categories categorys={categorys} filterItems={filterItems} />
-        <Menu items={menuItems} />
+        <Menu menuItems={menuItems} />
 
       </section>
     </main>

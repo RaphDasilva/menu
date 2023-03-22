@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Menu = ({ items }) => (
+const Menu = ({ menuItems }) => (
   <div className="section-center">
     {
-          items.map((item) => (
+          menuItems.map((item) => (
             <article className="menu-item" key={item.id}>
               <img src={item.img} alt={item.title} className="photo" />
               <div className="item-info">
@@ -27,6 +27,14 @@ const Menu = ({ items }) => (
 );
 
 Menu.propTypes = {
-  items: PropTypes.string.isRequired,
+  menuItems: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      title: PropTypes.string.isRequired,
+      img: PropTypes.string.isRequired,
+      price: PropTypes.number.isRequired,
+      desc: PropTypes.string.isRequired,
+    }),
+  ).isRequired,
 };
 export default Menu;

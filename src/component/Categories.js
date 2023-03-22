@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { v4 as uuidv4 } from 'uuid';
 
-const Categories = ({ categories, filterItems }) => (
+const Categories = ({ categorys, filterItems }) => (
   <div className="btn-container">
-    {categories.map((category) => (
+    {categorys.map((category) => (
       <button
         type="button"
         onClick={() => filterItems(category)}
@@ -18,7 +18,7 @@ const Categories = ({ categories, filterItems }) => (
 );
 
 Categories.propTypes = {
-  categories: PropTypes.arrayOf(PropTypes.string).isRequired,
+  categorys: PropTypes.arrayOf(PropTypes.string).isRequired,
   filterItems: PropTypes.func.isRequired,
 };
 
